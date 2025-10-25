@@ -1,0 +1,19 @@
+version: "3"
+services:
+  postgresql:
+    image: postgres:latest
+    restart: always
+    container_name: postgresql
+    ports:
+    - 5432:5432
+    networks:
+    - my-pg-network
+    volumes:
+    - ./data:/var/lib/postgresql/18/docker
+    environment:
+    - POSTGRES_PASSWORD=admin
+
+networks:
+  my-pg-network:
+    driver: bridge
+
