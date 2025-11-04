@@ -1,0 +1,665 @@
+    1  ls
+    2  exit
+    3  mkdir ~/.ssh
+    4  ls
+    5  cd ~/.ssh/
+    6  nano authorized_keys
+    7  exit
+    8  cd ~/.ssh/
+    9  nano authorized_keys
+   10  ls
+   11  cd .ssh
+   12  ssh-keygen
+   13  cat test.pub
+   14  exit
+   15  cd .ssh
+   16  nano authorized_keys
+   17  exit
+   18  nano authorized_keys
+   19  exit
+   20  ls -a
+   21  ls -al
+   22  sudo nano /etc/ssh/sshd_config
+   23  sudo systemctl restart sshd
+   24  which sshd
+   25  systemctl list-units --all sshd.service
+   26  sudo systemctl restart ssh.service
+   27  exit
+   28  nano authorized_keys
+   29  exit
+   30  cd .ssh
+   31  ls
+   32  ls -la
+   33  sudo nano /etc/ssh/sshd_config
+   34  exit
+   35  ~
+   36  ~/.ssh
+   37  cd ~/.ssh
+   38  ls
+   39  nano authorized_keys
+   40  chmod 600 authorized_keys
+   41  sudo systemctl restart ssh.service
+   42  exit
+   43  nano authorized_keys
+   44  exit
+   45  pwd
+   46  ls
+   47  ls -la
+   48  chmod 600 authorized_keys
+   49  ls -la
+   50  exit
+   51  ls -la
+   52  sudo apt update
+   53  sudo apt upgrade
+   54  apt-get install ca-certificates curl
+   55  sudo apt-get install ca-certificates curl
+   56  sudo install -m 0755 -d /etc/apt/keyrings
+   57  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+   58  sudo chmod a+r /etc/apt/keyrings/docker.asc
+   59  sudo apt update
+   60  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+   61    $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   62  sudo apt-get update
+   63  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   64  sudo usermod -aG docker $USER
+   65  sudo systemctl status docker
+   66  docker ps
+   67  exit
+   68  docker ps
+   69  exit
+   70  ip a
+   71  sudo poweroff
+   72  docker ps -a
+   73  docker run --name my-mongo -d mongo
+   74  docker ps
+   75  docker ps -a
+   76  docker stop my-mongo
+   77  docker ps -a
+   78  docker start my-mongo
+   79  docker restart my-mongo
+   80  docker ps
+   81  docker pause my-mongo
+   82  docker ps
+   83  docker unpause my-mongo
+   84  docker ps
+   85  docker kill --signal=1 my-mongo
+   86  docker ps
+   87  docker container prune
+   88  docker ps
+   89  docker ps -a
+   90  docker run  -d mongo
+   91  docker ps
+   92  docker rename hopeful_noyce mongodb
+   93  docker ps
+   94  docker stats
+   95  docker inspect mongodb
+   96  docker inspect -f {{.State.Status}} mongodb
+   97  docker logs mongodb
+   98  docker logs mongodb | grep ip
+   99  docker logs mongodb | grep id
+  100  docker logs mongodb | grep id -A10
+  101  docker logs mongodb | grep id -A 10
+  102  docker logs mongodb | grep id -m 2
+  103  docker logs mongodb | grep id -m2
+  104  docker logs mongodb | grep id -B
+  105  docker logs mongodb | grep id -b
+  106  docker logs mongodb | grep id
+  107  docker logs mongodb -f
+  108  docker stats
+  109  docker rename  mongodb mongo
+  110  docker start mongo
+  111  docker ps
+  112  docker exec -it mango bash
+  113  docker exec -it mongo bash
+  114  docker exec  mongo mongo --version
+  115  docker ps
+  116  docker exec  mongo mongo --version
+  117  docker exec  mongo mongo -v
+  118  docker exec -it mango bash
+  119  docker exec -it mongo bash
+  120  docker exec -it mango bash
+  121  docker exec -it mongo bash
+  122  docker exec  mongo bash -c 'ls '
+  123  docker ps
+  124  docker create --name mongodb mongo
+  125  docker ps -a
+  126  docker start mongodb
+  127  docker ps
+  128  docker exec  mongodb bash -c 'touch itsalive.txt '
+  129  docker exec  mongo bash -c 'ls '
+  130  docker exec  mongodb bash -c 'touch itsalive.txt '
+  131  docker exec  mongodb bash -c 'ls '
+  132  sudo poweroff
+  133  history
+  134  docker run --name grafana -d grafana
+  135  docker run --name grafana -d grafana/grafana
+  136  docker stats
+  137  docker inspect grafana
+  138  docker logs grafana > grafana.txt
+  139  ls
+  140  cat grafana.txt
+  141  docker exec -e grafana printenv
+  142  docker exec  grafana printenv
+  143  docker exec  grafana printenv > env.txt
+  144  cat env.txt
+  145  docker exec  grafana grafana-cli admin
+  146  docker exec  grafana grafana-cli
+  147  docker exec  grafana grafana cli
+  148  docker exec -it grafana bash
+  149  docker exec  grafana grafana cli admin
+  150  docker exec  grafana grafana cli admin h
+  151  docker ps
+  152  ip a
+  153  docker ps -ф
+  154  docker ps -a
+  155  docker pull nginx
+  156  docker ps -a
+  157  docker images
+  158  docker save --output nginx.tar nginx
+  159  ls
+  160  mkdir nginx
+  161  tar xvf nginx.tar -C nginx
+  162  cd nginx
+  163  ls
+  164  docker history nginx
+  165  sudo du -sh /var/lib/docker/overlay2
+  166  sudo du -sh /var/lib/docker/conteiners
+  167  sudo cd /var/lib/docker/
+  168  sud0 -i
+  169  sudo -i
+  170  docker inspect grafana
+  171  docker inspect grafana/grafana
+  172  docker image ls
+  173  docker image ls --format {{.Tag}}
+  174  docker image ls --filter *before=node*
+  175  docker ps
+  176  poweroff
+  177  sudo poweroff
+  178  apt install git
+  179  sudo apt install git
+  180  git clone https://github.com/AlariCode/docker-demo.git
+  181  ls
+  182  cd docker-demo
+  183  sudo apt install mc
+  184  mc
+  185  nano ./apps/api/Dockerfile
+  186  mc
+  187  docker build -f ./apps/api/Dockerfile -t test:latest .
+  188  docker run -d --name api test:latest
+  189  docker ps
+  190  mc
+  191  docker ps
+  192  docker stop api
+  193  docker
+  194  docker exec -it api bash
+  195  docker start api
+  196  docker exec -it api bash
+  197  docker ps
+  198  docker exec -it api sh
+  199  docker images
+  200  mc
+  201  docker build -f ./apps/api/Dockerfile -t test:latest .
+  202  mc
+  203  docker build -f ./apps/api/Dockerfile -t test:latest .
+  204  docker ps
+  205  docker images
+  206  docker stop api
+  207  docker start a
+  208  docker image prune
+  209  docker images
+  210  docker image prune
+  211  docker images
+  212  docker stop api
+  213  docker image prune
+  214  docker images
+  215  docker image rm b31f84086601
+  216  docker ps
+  217  docker ps -a
+  218  docker rm 70a267dc77a6
+  219  docker image prune
+  220  docker images
+  221  docker run -d --name api test:latest
+  222  docker ps
+  223  docker logs ed86463cd9d3
+  224  wget https://github.com/wagoodman/dive/releases/download/v0.13.1/dive_0.13.1_linux_amd64.deb
+  225  sudo apt install ./dive_0.13.1_linux_amd64.deb
+  226  dive test:latest
+  227  docker ps
+  228  docker rm ed86463cd9d3
+  229  docker stop ed86463cd9d3
+  230  docker rm ed86463cd9d3
+  231  docker images
+  232  docker image rm test
+  233  docker images
+  234  mc
+  235  docker build -f ./apps/api/Dockerfile -t test:latest .
+  236  mc
+  237  docker build -f ./apps/api/Dockerfile -t test:latest .
+  238  npm install -g npm@11.6.2
+  239  sudo npm install -g npm@11.6.2
+  240  docker build -f ./apps/api/Dockerfile -t test:latest .
+  241  mc
+  242  docker build -f ./apps/api/Dockerfile -t test:latest .
+  243  docker images
+  244  docker run -d --name api test:latest
+  245  docker logs api
+  246  docker ps
+  247  docker run -d --name api test:latest
+  248  docker start api
+  249  docker ps
+  250  docker ps -a
+  251  docker logs api
+  252  mc
+  253  history
+  254  docker history nginx
+  255  docker ps -a
+  256  docker rm 5cb0d385fa73
+  257  docker images
+  258  docker image rm test
+  259  docker images
+  260  docker stats nginx
+  261  docker stat nginx
+  262  docker image stats nginx
+  263  docker images stats nginx
+  264  docker image stat nginx
+  265  mc
+  266  docker build -f ./apps/api/Dockerfile -t test:latest .
+  267  docker run -d --name api test:latest
+  268  docker ps
+  269  docker logs api
+  270  cd ..
+  271  cd docker-demo
+  272  mc
+  273  cd ..
+  274  ls
+  275  mkdir nginx-demo
+  276  cd nginx-demo
+  277  nano index.html
+  278  nano default.conf
+  279  ls
+  280  cat default.conf
+  281  nano Dockerfile
+  282  docker images
+  283  nano Dockerfile
+  284  docker build -t web:latest .
+  285  docker images
+  286  docker run -d --name webserv web:latest
+  287  docker ps
+  288  docker exec -it webserv bash
+  289  ls
+  290  ip a
+  291  sudo poweroff
+  292  git clone https://github.com/AlariCode/docker-demo-3.git
+  293  ls
+  294  cd docker-demo-3
+  295  docker build -t demo3:latest .
+  296  docker images
+  297  docker run --name=node-1 -d demo3:latest
+  298  docker run --name=node-2 -d demo3:latest
+  299  docker network ls
+  300  docker inspect brige
+  301  docker inspect bridge
+  302  mc
+  303  docker ps
+  304  docker exec -it node-1 sh
+  305  docker network create my-network
+  306  docker network ls
+  307  docker connect my-network node-1
+  308  docker network connect my-network node-1
+  309  docker network connect my-network node-2
+  310  docker network ls
+  311  docker ps
+  312  docker start node-1
+  313  docker start node-2
+  314  docker inspect my-network
+  315  docker inspect bridge
+  316  docker exec -it node-2 sh
+  317  docker run --name=node-3 --network my-network -d demo3:latest
+  318  docker inspect bridge
+  319  docker inspect my-network
+  320  docker run --name=node-4 -p 3000:3000 --network my-network -d demo3:latest
+  321  cure localhost:3000
+  322  curl localhost:3000
+  323  docker stop node-1
+  324  docker stop node-1 node-2
+  325  docker stop node-4 node-3
+  326  docker ps
+  327  docker
+  328  docker inspect host
+  329  curl 127.0.0.1:3000
+  330  docker run --name=node-6  --network none -d demo3:latest
+  331  docker exec -it node- sh
+  332  docker exec -it node-6 sh
+  333  cat /etc/resolv.conf
+  334  docker run
+  335  docker run --name=node-8  -d --dns 8.8.8.8 demo3
+  336  docker exec -it node-8 sh
+  337  docker network ls
+  338  sudo poweroff
+  339  git clone https://github.com/AlariCode/docker-demo-4.git
+  340  cd docker-demo-4
+  341  docker build -t demo4
+  342  docker build -t demo4 .
+  343  docker images
+  344  docker volume ls
+  345  docker volume prune
+  346  docker volume ls
+  347  docker volume create demo
+  348  docker volume ls
+  349  docker volume inpect demo
+  350  docker
+  351  docker run --name=volume-1  -d -v demo:/opt/app/data demo4
+  352  docker rm 89a2094c1a223a0fb8c83d7f0025a84cda94d9f116c5e21589489249c75e378e -f
+  353  docker run --name=volume-1  -d -v demo:/opt/app/data -p 3000:3000 demo4
+  354  curl "127.0.0.1:3000/set?id=1234"
+  355  sudo cat /var/lib/docker/volumes/demo/_data/req
+  356  docker run --name=volume-2  -d -v demo:/opt/app/data -p 3001:3000 demo4
+  357  docker ps
+  358  curl "127.0.0.1:300/get"
+  359  docker ps
+  360  docker rm 8d27753acaf9 -f
+  361  docker rm 8d27753acaf9 3b7453a40e48 -f
+  362  docker ps
+  363  sudo cat /var/lib/docker/volumes/demo/_data/req
+  364  docker volume rm demo
+  365  sudo ls /var/lib/docker/volumes
+  366  mc
+  367  docker build -t demo4-1 .
+  368  docker image
+  369  docker image ls
+  370  docker image inspect
+  371  docker image inspect
+  372  sudo ls /var/lib/docker/volumes
+  373  docker run --name=volume-3  -d -v  -p 3000:3000 demo4-1
+  374  docker run --name=volume-3  -d   -p 3000:3000 demo4-1
+  375  sudo ls /var/lib/docker/volumes
+  376  curl "127.0.0.1:3000/set?id=1234"
+  377  docker rm -f volume-4
+  378  docker rm -f volume-3
+  379  docker volume create demo
+  380  docker run --name=volume-4  -d   -p 3000:3000 -v demo:/opt/app/data demo4-1
+  381  docker volume ls
+  382  docker ps
+  383  docker rm -f  demo4-1
+  384  docker rm -f  volume-4
+  385  docker run --name=volume-5  -d   -p 3000:3000 -v /home/andrei/data:/opt/app/data demo4-1
+  386  ls -l
+  387  ls -l .
+  388  ls -l ..
+  389  ls -l .. data
+  390  ls -l .. /data
+  391  ls -l .. /data/
+  392  ls -l /home/andrei/data/
+  393  curl "127.0.0.1:3000/set?id=1234"
+  394  ls -l /home/andrei/data/
+  395  ls -l /home/andrei/data/req
+  396  ls -l /home/andrei/data/req/
+  397  mc
+  398  docker  volume ls
+  399  docker rm -f  volume-5
+  400  docker run --name=volume-6  -d   -p 3000:3000 --tmpfs /opt/app/data  demo4-1
+  401  curl "127.0.0.1:3000/set?id=1234"
+  402  curl "127.0.0.1:3000/get"
+  403  docker rm stop  volume-5
+  404  docker  stop  volume-5
+  405  docker  stop  volume-6
+  406  docker  start  volume-6
+  407  curl "127.0.0.1:3000/get"
+  408  docker run --name=volume-7  -d   -p 3000:3000 --mount type=tmpfs,destination=/opt/app/data   demo4-1
+  409  docker  stop  volume-6
+  410  docker run --name=volume-7  -d   -p 3000:3000 --mount type=tmpfs,destination=/opt/app/data   demo4-1
+  411  curl "127.0.0.1:3000/set?id=1234"
+  412  curl "127.0.0.1:3000/get"
+  413  docker  stop  volume-7
+  414  docker  stop  volume-8
+  415  docker run --name=volume-9  -d   -p 3000:3000    demo4
+  416  curl "127.0.0.1:3000/get"
+  417  docker cd /home/andrei/data volume-9:/opt/app/data
+  418  docker cp /home/andrei/data volume-9:/opt/app/data
+  419  curl "127.0.0.1:3000/get"
+  420  docker cp  volume-9:/opt/app/data /home/andrei/docker-demo-4
+  421  ls
+  422  mc
+  423  history
+  424  mc
+  425  docker pull postgres
+  426  mc
+  427  sudo mc
+  428  docker run --name=postresql  -d   -v /home/andrei/data:/data/pg postgres
+  429  mc
+  430  docker rm postresql -f
+  431  sudo mc
+  432  docker run --name=postresql  -d   -v /home/andrei/data/:/data/pg postgres
+  433  mc
+  434  docker exec -it postresql  bash
+  435  docker ps
+  436  docker start 552d86ca446a86dae3a106e7e8310ebd02a68c29447978e5edea82092d9be3ca
+  437  docker ps
+  438  docker logs postresql
+  439  docker run --name=postresql  -d  -e POSTGRES_PASSWORD=password  -v /home/andrei/data/:/data/pg postgres
+  440  docker rm postresql -f
+  441  docker run --name=postresql  -d  -e POSTGRES_PASSWORD=password  -v /home/andrei/data/:/data/pg postgres
+  442  docker ps
+  443  mc
+  444  docker ps
+  445  docker inspect postgres
+  446  docker exec -it postresql  bash
+  447  docker rm postresql -f
+  448  docker run --name=postresql  -d  -e POSTGRES_PASSWORD=password  -v /home/andrei/data/:/var/lib/postgresql/18/docker postgres
+  449  mc
+  450  su mc
+  451  sudo mc
+  452  docker rm postresql -f
+  453  docker ps
+  454  sudo mc
+  455  docker run --name=postresql1  -d  -e POSTGRES_PASSWORD=password  -v /home/andrei/docker-demo-4/data/:/var/lib/postgresql/18/docker postgres
+  456  docker ps
+  457  sudo mc
+  458  sudo poweroff
+  459  sudo mc
+  460  mc
+  461  docker ps
+  462  docker
+  463  docker-compose stop
+  464  docker-compose start
+  465  docker logs api
+  466  docker-compose down
+  467  docker-compose run -d
+  468  docker-compose up -d
+  469  docker ps
+  470  docker logs api
+  471  docker logs rmq
+  472  docker logs api
+  473  docker-compose stop
+  474  docker-compose start
+  475  docker logs api
+  476  docker ps
+  477  docker logs docker-demo_rmq_1
+  478  docker logs api
+  479  mc
+  480  docker-compose config
+  481  docker-compose down
+  482  poweroff
+  483  sudo poweroff
+  484  ls
+  485  docker images
+  486  nano docker-compose.yml
+  487  docker-compose up -d
+  488  sudo apt  install docker-compose
+  489  docker-compose up -d
+  490  docker ps
+  491  docker-compose stop
+  492  docker-compose start
+  493  docker-compose down
+  494  docker-compose up -d
+  495  docker-compose logs
+  496  docker-compose images
+  497  docker-compose top
+  498  ls
+  499  cd docker-demo
+  500  git checkout block-7
+  501  cd ..
+  502  mc
+  503  git clone https://github.com/AlariCode/docker-demo.git
+  504  cd docker-demo
+  505  git checkout block-7
+  506  ls -la
+  507  nano docker-compose.yml
+  508  docker-compose up -d
+  509  docker images
+  510  docker ps
+  511  docker ps -a
+  512  docker rm api
+  513  docker ps
+  514  docker rm -f my-name
+  515  docker ps
+  516  docker-compose up -d
+  517  docker ps
+  518  docker logs docker-demo_api
+  519  docker logs api
+  520  mc
+  521  ls
+  522  cd docker-demo
+  523  ls
+  524  mc
+  525  nano docker-compose.yml
+  526  docker-compose up -d
+  527  nano docker-compose.yml
+  528  docker-compose up -d
+  529  mc
+  530  docker-compose up -d
+  531  mc
+  532  docker-compose up -d
+  533  mc
+  534  docker-compose up -d
+  535  mc
+  536  docker-compose up -d
+  537  docker logs api
+  538  docker logs converter
+  539  ip a
+  540  docker-compose top
+  541  docker-compose up --build
+  542  docker-compose up -d
+  543  docker-compose top
+  544  docker ps
+  545  mc
+  546  sudo apt install ubuntu-desktop
+  547  sudo reboot
+  548  docker ps
+  549  docker top
+  550  docker stat
+  551  docker stats
+  552  mc
+  553  docker-compose up -d
+  554  ls
+  555  cd docker-demo
+  556  docker-compose up -d
+  557  docker-compose down
+  558  docker-compose up -d
+  559  docker stats
+  560  docker-compose top
+  561  docker ps
+  562  docker logs api
+  563  docker logs converter
+  564  docker-compose top
+  565  ды
+  566  ls
+  567  cd docker-demo
+  568  docker-compose top
+  569  docker stats
+  570  docker ps
+  571  mc
+  572  docker-compose help
+  573  history
+  574  mc
+  575  docker-compose down
+  576  docker-compose help
+  577  ls
+  578  docker-compose --file docker-compose1.yml -d
+  579  docker-compose up --file docker-compose1.yml -d
+  580  docker-compose up -d  --file docker-compose1.yml
+  581  docker-compose up -d  -f docker-compose1.yml
+  582  docker-compose help
+  583  docker-compose   -f docker-compose1.yml  up -d
+  584  docker-compose top
+  585  docker-compose   -f docker-compose1.yml --profile backend up -d
+  586  docker-compose top
+  587  docker ps
+  588  docker-compose   -f docker-compose1.yml down
+  589  docker-compose   -f docker-compose1.yml run api
+  590  mc
+  591  nano .env.compose
+  592  docker-compose   -f docker-compose1.yml  --env-file .env.compose up -d
+  593  docker-compose   -f docker-compose1.yml  down
+  594  docker-compose   -f docker-compose2.yml  --env-file .env.compose up -d
+  595  docker-compose   -f docker-compose1.yml  down
+  596  mc
+  597  COMPOSE_PROJECT_NAME=converter docker-compose   up -d
+  598  docker ps
+  599  nano docker-compose.dev.yml
+  600  COMPOSE_PROJECT_NAME=converter docker-compose  down
+  601  COMPOSE_PROJECT_NAME=converter docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+  602  docker ps
+  603  mc
+  604  nano docker-compose.api.yml
+  605  COMPOSE_PROJECT_NAME=converter docker-compose -f docker-compose.yml -f docker-compose.dev.yml down
+  606  mc
+  607  COMPOSE_PROJECT_NAME=converter docker-compose -f docker-compose2.yml up -d
+  608  docker ps
+  609  COMPOSE_PROJECT_NAME=converter docker-compose -f docker-compose2.yml down
+  610  mc
+  611  ls
+  612  ls -a
+  613  mc
+  614  ьс
+  615  mc
+  616  ls
+  617  cd ,,
+  618  cd /
+  619  ls
+  620  cd /home/andrei
+  621  ls
+  622  cd demo-postgres
+  623  mc
+  624  ls
+  625  mc
+  626  history
+  627  mc
+  628  docker-compose  up -d
+  629  mc
+  630  sudo mc
+  631  docker ps
+  632  docker postgresql inspect
+  633  docker logs postgresql
+  634  docker inspect postgresql
+  635  sudo poweroff
+  636  ls
+  637  cd docker-demo
+  638  docker-compose -f docker-compose1.yml down
+  639  mc
+  640  ls
+  641  nano TOKEN.txt
+  642  cat TOKEN.txt | docker login https://docker.pkg.github.com -u andreichernobaev --password-stdin
+  643  docker images
+  644  docker tag docker-demo_app:latest docker.pkg.github.com/andreichernobaev/dz-demo/dz-demo:latest
+  645  docker images
+  646  docker push docker.pkg.github.com/andreichernobaev/dz-demo/dz-demo
+  647  ls
+  648  mkdir registry
+  649  cd registry
+  650  nano docker-compose.yml
+  651  docker ps
+  652  docker rm postgresql -f
+  653  docker ps
+  654  docker-compose  up -d
+  655  docker ps
+  656  docker images
+  657  docker tag docker-demo_app:latest localhost:5000/app
+  658  docker images
+  659  docker push localhost:5000/app
+  660  docker images
+  661  docker image rm localhost:5000/app
+  662  docker images
+  663  docker pull localhost:5000/app:latest
+  664  docker images
+  665  history
